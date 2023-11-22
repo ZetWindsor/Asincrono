@@ -16,7 +16,6 @@ function caricamentoDati() {
 
 async function ottieniDati() {
   try {
-
     const dati = await caricamentoDati();
     console.log(dati);
   }

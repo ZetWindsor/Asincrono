@@ -9,7 +9,7 @@ function fetchDataFromAPI() {
   return new Promise((resolve, reject) => {
     const success = Math.random() * 0.5;
     setTimeout(() => {
-      if (success > 0.25) {
+      if (success > 0.25) {   //gli ho messo a meta senno devi avere il culo che droppa proprio 0.5
         resolve(`Data retrived Succesfully`);
       } else {
         reject(new Error(`Error: Failed to fetch data`));
@@ -19,10 +19,23 @@ function fetchDataFromAPI() {
   });
 }
 
-fetchDataFromAPI()
+/* fetchDataFromAPI()
   .then((data) => {
     console.log(data);
   })
   .catch((error) => {
     console.error(error.message);
   });
+ */
+
+  async function ottieniDati() {
+    try {
+      const dati = await fetchDataFromAPI();
+      console.log(dati);
+    }
+    catch(error){
+      console.log(error.message);
+    }
+  }
+
+  ottieniDati()
