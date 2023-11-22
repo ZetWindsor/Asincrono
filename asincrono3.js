@@ -10,13 +10,13 @@ console.log("Il promemoria è in fase di impostazione");
 setTimeout(mostraPromemoria, 5000);
 
 
-//////////////////////////////////////////////////!SECTION
+//////////////////////////////////////////////////
 
 
-setTimeout(function() {
+/* setTimeout(function() {
   console.log("Il promemoria è in fase di impostazione");
 }, 4000); 
 
-setTimeout(mostraPromemoria, 5000); 
+setTimeout(mostraPromemoria, 5000);  */
 ` non ho capito se dobbiamo dare che spunta che è in fase di impostazione subito e dopo 5 secondi la pausa
 oppure che tipo a 4 secondi dice che è in impostaizone e a 5 pausa`

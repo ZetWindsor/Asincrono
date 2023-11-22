@@ -23,4 +23,4 @@ function displayResult(error,result) {
 }
 
 
-performOperation(5, 6, displayResult);
+performOperation(5, 3, displayResult);

@@ -2,19 +2,20 @@
 La promise dovrebbe risolversi con i dati e rifiutare con un messaggio di errore.`
 
 
+function fetchDataFromAPI() {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      let data = { name: "John", age: 30 };
+      if (data.age > 18) {
+        resolve(data)
+      } else {
+        reject(`error : not a vaild data`)
+      }
+    }, 2000)
+  })
 
-function fetchDataFromAPI(callback) {
- return new Promise((resolve, reject))
-
-  setTimeout(function () {
-    let data = { name: "John", age: 30 };
-    callback(data)}, 2000)
-
-  }
-
-
-function handleData(data) {
-  console.log(data);
 }
 
-fetchDataFromAPI(handleData);
+fetchDataFromAPI().then((data) => console.log(data)).catch((error) => {
+  console.log(error)
+});;

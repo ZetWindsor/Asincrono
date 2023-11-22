@@ -7,8 +7,8 @@ function fetchDataFromAPI(callback) {
     callback(data)}, 2000)
   }
 
-function handleData(data) {
-  console.log(data);
+function handleData(ciao) {
+  console.log(ciao);
 }
 
 fetchDataFromAPI(handleData);

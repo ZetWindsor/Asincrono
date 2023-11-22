@@ -19,8 +19,6 @@ function fetchDataFromAPI() {
   });
 }
 
-
-
 fetchDataFromAPI()
   .then((data) => {
     console.log(data);

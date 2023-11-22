@@ -16,4 +16,5 @@ function Dice() {
   }, 2000)
 }
 
+
 Dice()
