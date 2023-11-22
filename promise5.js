@@ -19,12 +19,24 @@ function basedFunction(arg1, arg2) {
       } else {
         reject(new Error(`Result is not odd`));
       }
-    },2000);
+    }, 2000);
   });
 }
 
-basedFunction(2, 3).then(risultato => {
+/* basedFunction(2, 3).then(risultato => {
   console.log(`il risultato è ${risultato}`)//l' ho messo in italiano il parametro perché mi deve ancore entrare bene in testa il richiamo dei parametri nei .then, .catch e nelle callback
 }).catch(error => {
   console.log(`Error:`, error.message);
-})
+}) */
+
+async function ottieniDati() {
+  try {
+    const dati = await basedFunction(2, 3);
+    console.log(`the number ${dati} is odd`);
+  }
+  catch(error){
+    console.log(error.message);
+  }
+}
+
+ottieniDati()
