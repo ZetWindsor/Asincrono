@@ -9,8 +9,8 @@ function fetchDataFromAPI() {
   return new Promise((resolve, reject) => {
     const success = Math.random() * 0.5;
     setTimeout(() => {
-      if (success > 0.25) {   //gli ho messo a meta senno devi avere il culo che droppa proprio 0.5
-        resolve(`Data retrived Succesfully`);
+      if (success > 0.01) {   //gli ho messo a meta senno devi avere il culo che droppa proprio 0.5
+        resolve(`Data retrived Succesfully`, console.log((success).toFixed(2)));
       } else {
         reject(new Error(`Error: Failed to fetch data`));
       }
