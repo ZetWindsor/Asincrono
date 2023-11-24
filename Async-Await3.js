@@ -56,5 +56,3 @@ setTimeout(() => {
   return;
 }
 }
-
-lanciaVeicoloSpaziale();
