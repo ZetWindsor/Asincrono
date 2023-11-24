@@ -10,14 +10,14 @@ Gestisci eventuali errori nel caricamento dei moduli stampando in console "Impos
 
 Alla fine, se tutti i moduli sono stati caricati con successo, stampa in console "Veicolo spaziale pronto per il lancio!".`
 
-function caricaModulo(modulo) {
+async function caricaModulo(modulo) {
   return new Promise((resolve, reject) => {
     const tempoCaricamento = Math.random() * 3000; // Simula il caricamento con un ritardo casuale fino a 3 secondi.
     setTimeout(() => {
-      if (tempoCaricamento < 1500) {
+      if (tempoCaricamento < 2000) {
         resolve(`Il modulo ${modulo} è stato caricato.`);
       } else {
-        reject(`Errore durante il caricamento del modulo ${modulo}.`);
+        reject(new Error(`Errore durante il caricamento del modulo ${modulo}.`));
       }
     }, tempoCaricamento);
   });
@@ -28,10 +28,7 @@ function caricaModulo(modulo) {
 async function lanciaVeicoloSpaziale() {
   try {
     const moduloA = await caricaModulo(`A`)
-    if (moduloA) { console.log(moduloA); }else{
-      console.log(error =>(error.message));
-    };
-
+    console.log(moduloA);
 
     const moduloB = await caricaModulo(`B`)
     console.log(moduloB);
@@ -39,19 +36,25 @@ async function lanciaVeicoloSpaziale() {
     const moduloC = await caricaModulo(`C`)
     console.log(moduloC);
 
-    if (error) {
+/*     if (error) {
       console.log(error.message);
     } else {
       setTimeout(() => { console.log('Veicolo spaziale pronto per il lancio!') }, 2000)
         ;
-
     }
-
-
-  } catch (error) {
-    console.log("ERRORE IL VEICOLO MO ESPLODE E FA UN GROSSO BOOOOOOM");
-
   }
+  catch (error) {
+    console.log("ERRORE IL VEICOLO MO ESPLODE E FA UN GROSSO BOOOOOOM");
+  }
+} */
+
+setTimeout(() => {
+  console.log('Veicolo spaziale pronto per il lancio!');
+}, 2000);
+} catch (error) {
+  console.log(`STO MODULO FA SCHIFO: ${error.message}`);
+  return;
+}
 }
 
-console.log(lanciaVeicoloSpaziale());
+lanciaVeicoloSpaziale();
