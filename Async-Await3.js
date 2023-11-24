@@ -55,3 +55,6 @@ async function lanciaVeicoloSpaziale() {
 }
 
 console.log(lanciaVeicoloSpaziale());
+
+
+// non ho capito come fare in modo che si blocchi prima
